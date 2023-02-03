@@ -16,6 +16,6 @@ func (app *application) routes() http.Handler {
 		AllowedHeaders: []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 	}))
 
-	
+	mux.Get("/api/payment-intent", app.GetPaymentIntent)
 	return mux
 }
