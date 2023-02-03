@@ -58,6 +58,24 @@ func cardErrorMessage(code stripe.ErrorCode) string {
 	case stripe.ErrorCodeExpiredCard:
 		msg = "Your card is expired"
 
+	case stripe.ErrorCodeIncorrectCVC:
+		msg = "Incorrect CVC code"
+
+	case stripe.ErrorCodeBalanceInsufficient:
+		msg = "Insufficient balance"
+
+	case stripe.ErrorCodeIncorrectZip:
+		msg = "Incorrect zip/postal code"
+
+	case stripe.ErrorCodeAmountTooLarge:
+		msg = "The amount is too large to charge your card"
+
+	case stripe.ErrorCodeAmountTooSmall:
+		msg = "The amount is too small to charge your card"
+
+	case stripe.ErrorCodePostalCodeInvalid:
+		msg = "Your postal code is invalid"
+
 	default:
 		msg = "I don't know what happens, sorry :)"
 	}
